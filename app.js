@@ -7,7 +7,8 @@ const globalErrorController = require('./controller/errorController');
 const authRoutes = require('./router/authRoutes');
 const orgRoutes = require('./router/orgRoutes');
 const empRoutes = require('./router/empRoutes');
-const leaveRoutes = require('./router/leaveRoutes')
+const leaveRoutes = require('./router/leaveRoutes');
+const payrollRoutes = require('./router/payrollRoutes');
 //ankit
 // start app
 const app = express();
@@ -29,6 +30,7 @@ app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/org', orgRoutes);
 app.use('/api/v1/employee', empRoutes)
 app.use('/api/v1/leave', leaveRoutes)
+app.use('/api/v1/payroll', payrollRoutes)
 
 
 
