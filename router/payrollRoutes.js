@@ -5,6 +5,10 @@ const router = express.Router();
 
 router
     .route('/generateSalary')
-    .post(payrollController.addSalary);
+    .post(payrollController.addSalary)
+    .get(payrollController.getSalary)
+router
+.route('/deleteSalary')
+.post(payrollController.deleteSalary);
 
 module.exports = router;

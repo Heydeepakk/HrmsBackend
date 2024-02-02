@@ -48,7 +48,7 @@ exports.addEmployee = catchAsync(async(req, res, next) => {
         if(err) return next(new AppError('Something went wrong!', 400));
 
         if(result.length == 0){
-            const empId = 'Emp00' + 1;
+            const empId = 'EM00' + 1;
 
             let image = req.body.image;
             
@@ -86,7 +86,7 @@ exports.addEmployee = catchAsync(async(req, res, next) => {
         }else{
             result.forEach(el => {
                 let u_id = el.id + 1;
-                let empId = 'Emp00' + u_id;       
+                let empId = 'EM00' + u_id;       
                 
                 let image = req.body.image;
                 
