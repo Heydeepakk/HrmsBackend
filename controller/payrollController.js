@@ -16,6 +16,7 @@ exports.addSalary = catchAsync(async (req, res, next) => {
     const other_allowance = await req.body.other_allowance;
     const pf = await req.body.pf;
     const esi = await req.body.esi;
+    const kra = await req.body.kra;
     const monthly_salary = await req.body.monthly_salary;
 
     const checkExistingQuery = "SELECT * FROM payroll WHERE emp_id = ?";
@@ -27,8 +28,8 @@ exports.addSalary = catchAsync(async (req, res, next) => {
         if (checkResult.length > 0) {
             return next(new AppError('Employee with the provided EMP ID already exists!', 400));
         }
-        const insertQuery = `INSERT INTO payroll(emp_id,emp_name,ctc,basic_salary,basic_salary_percentage,hra,hra_percentage,medical,convenience,other_allowance,pf,esi,monthly_salary) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)`;
-        con.query(insertQuery, [emp_id, emp_name, ctc, basic_salary, basic_salary_percentage, hra, hra_percentage, medical, convenience, other_allowance, pf, esi,monthly_salary], (err, result) => {
+        const insertQuery = `INSERT INTO payroll(emp_id,emp_name,ctc,basic_salary,basic_salary_percentage,hra,hra_percentage,medical,convenience,other_allowance,pf,esi,kra,monthly_salary) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
+        con.query(insertQuery, [emp_id, emp_name, ctc, basic_salary, basic_salary_percentage, hra, hra_percentage, medical, convenience, other_allowance, pf, esi,kra,monthly_salary], (err, result) => {
             if (err) return next(new AppError('Something went wrong! Please try again later!', 400));
             if (result.affectedRows === 0) return next(new AppError('Please fill the Inputs!', 400));
 
