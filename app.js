@@ -12,7 +12,7 @@ const payrollRoutes = require('./router/payrollRoutes');
 //ankit
 // start app
 const app = express();
-// Development Logging
+// Developme nt Logging
 if(process.env.NODE_ENV === 'development'){
     app.use(morgan('dev'));
 }
