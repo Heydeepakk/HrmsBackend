@@ -44,7 +44,7 @@ exports.addSalary = catchAsync(async (req, res, next) => {
 
 exports.getSalary = catchAsync(async(req, res,next) => {
 
-    const sql = `SELECT p.*,e.doj FROM payroll as p join employee as e on e.emp_id=p.emp_id`
+    const sql = `SELECT * FROM payroll`
 
 
     con.query(sql, (err, result) => {
