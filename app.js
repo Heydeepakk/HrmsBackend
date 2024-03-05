@@ -9,6 +9,7 @@ const orgRoutes = require('./router/orgRoutes');
 const empRoutes = require('./router/empRoutes');
 const leaveRoutes = require('./router/leaveRoutes');
 const payrollRoutes = require('./router/payrollRoutes');
+const policyRoutes = require('./router/policyRoutes')
 //ankit
 // start app
 const app = express();
@@ -31,6 +32,7 @@ app.use('/api/v1/org', orgRoutes);
 app.use('/api/v1/employee', empRoutes)
 app.use('/api/v1/leave', leaveRoutes)
 app.use('/api/v1/payroll', payrollRoutes)
+app.use('/api/v1/policy', policyRoutes)
 
 
 
