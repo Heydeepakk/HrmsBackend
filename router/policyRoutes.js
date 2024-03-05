@@ -8,5 +8,6 @@ router
     .post(policyController.addPolicy)
     .get(policyController.getPolicy)
 
+    
 
 module.exports = router;
